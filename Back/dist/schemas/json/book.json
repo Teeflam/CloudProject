@@ -1,0 +1,45 @@
+{
+    "$id": "book.json",
+    "$schema": "http://json-schema.org/schema",
+    "type": "object",
+    "required": [
+        "author_id",
+        "publisher_id",
+        "title",
+        "place_publication",
+        "category_id",
+        "published_dt",
+        "isbn",
+        "status"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "book_id": {
+            "type": "number"
+        },
+        "author_id": {
+            "type": "number"
+        },
+        "title": {
+            "type": "string"
+        },
+        "publisher_id": {
+            "type": "number"
+        },
+        "place_publication": {
+            "type": "string"
+        },
+        "published_dt": {
+            "type": "number"
+        },
+        "category_id": {
+            "type": "number"
+        },
+        "isbn": {
+            "type": "number"
+        },
+        "status": {
+            "type": "boolean"
+        }
+    }
+}

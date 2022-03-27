@@ -1,0 +1,21 @@
+{
+    "$id": "author.json",
+    "$schema": "http://json-schema.org/schema",
+    "type": "object",
+    "required": ["author_name", "born"],
+    "additionalProperties": false,
+    "properties": {
+        "author_id": {
+            "type": "number"
+        },
+        "author_name": {
+            "type": "string"
+        },
+        "born": {
+            "type": "number"
+        },
+        "died": {
+            "type": ["number", "null"]
+        }
+    }
+}

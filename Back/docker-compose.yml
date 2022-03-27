@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+    db:
+        image: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: GOT
+        ports:
+            - '3306:3306'
+        volumes:
+            - './script:/docker-entrypoint-initdb.d'
+    adminer:
+        image: adminer
+        ports:
+            - 8090:8080
+    app:
+        build: .
+        environment:
+            - PORT=80
+        ports:
+            - 8080:80
+        external_links:
+            - db
+            - adminer
+        depends_on:
+            - db
+            - adminer

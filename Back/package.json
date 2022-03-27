@@ -1,0 +1,53 @@
+{
+  "name": "api-library",
+  "version": "1.0.0",
+  "description": "REST Library API",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf dist",
+    "lint": "eslint --fix ./src",
+    "start": "node ./dist/index.js | npx pino-pretty",
+    "clean-schemas": "rimraf src/schemas/types/*",
+    "compile-schemas": "npm run clean-schemas && cd src/schemas/json && json2ts -i . -o ../types",
+    "build-and-start": "npm run build && npm run start",
+    "run-prod": "cross-env NODE_ENV=prod npm run start "
+  },
+  "author": "Franck <franck.di@efrei.net>",
+  "license": "ISC",
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@types/chai": "^4.2.22",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/mocha": "^9.0.0",
+    "@types/mysql": "^2.15.19",
+    "@types/node": "^15.12.2",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "chai": "^4.3.4",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.2.0",
+    "json-schema-to-typescript": "^10.1.5",
+    "mocha": "^9.1.3",
+    "nodemon": "^2.0.15",
+    "nyc": "^15.1.0",
+    "pino-pretty": "^7.5.0",
+    "rimraf": "^3.0.2",
+    "sinon": "^12.0.1",
+    "sinon-chai": "^3.7.0",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "apidoc": "^0.50.5",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "fastify": "^3.25.3",
+    "fastify-cors": "^6.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typedoc": "^0.22.13",
+    "typeorm": "^0.2.41"
+  }
+}
